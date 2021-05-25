@@ -1,0 +1,49 @@
+entity PetType(types) {
+    name String required maxlength(80)
+}
+
+entity Specialty(specialties) {
+    name String required maxlength(80)
+}
+
+entity Vet(vets) {
+    firstName String required maxlength(30)
+    lastName String required maxlength(30)
+}
+
+entity Owner(owners) {
+    firstName String required maxlength(30)
+    lastName String required maxlength(30)
+    address String required maxlength(255)
+    city String required maxlength(80)
+    telephone String required maxlength(20)
+}
+
+entity Pet(pets) {
+    name String required maxlength(30)
+    birthDate LocalDate
+}
+
+entity Visit(visits) {
+    visitDate LocalDate
+    description String required maxlength(255)
+}
+
+relationship OneToMany {
+  Owner{pets(name)} to Pet{owner(lastName)}
+  Pet{visits} to Visit{pet(name)}
+}
+
+relationship ManyToOne {
+  Pet{type(name)} to PetType
+}
+
+relationship ManyToMany{
+    Vet{specialties(name)} to Specialty{vets}
+}
+
+paginate PetType, Specialty, Vet, Owner, Pet, Visit with pagination
+
+dto * with mapstruct
+service all with serviceImpl
+filter Vet, Owner, Pet, Visit

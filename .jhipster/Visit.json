@@ -1,0 +1,34 @@
+{
+  "name": "Visit",
+  "fields": [
+    {
+      "fieldName": "visitDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pet",
+      "otherEntityRelationshipName": "visits",
+      "relationshipName": "pet",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "visits",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210525094114"
+}

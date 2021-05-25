@@ -1,0 +1,29 @@
+{
+  "jhpetclinicApp": {
+    "owner": {
+      "home": {
+        "title": "Owners",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreirati Owner",
+        "createOrEditLabel": "Kreirati ili urediti Owner",
+        "notFound": "Nije nađeno Owners"
+      },
+      "created": "Kreiran je Owner sa identifikatorom {{ param }}",
+      "updated": "Ažuriran je Owner sa identifikatorom {{ param }}",
+      "deleted": "Obrisan je Owner sa identifikatorom {{ param }}",
+      "delete": {
+        "question": "Da li ste sigurni da želite obrisati Owner {{ id }}?"
+      },
+      "detail": {
+        "title": "Owner"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "address": "Address",
+      "city": "City",
+      "telephone": "Telephone",
+      "pets": "Pets"
+    }
+  }
+}
